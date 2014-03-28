@@ -1,0 +1,15 @@
+\documentclass{article}
+\begin{document}
+\begin{table}[h]
+\caption{Performance Using Hard Decision Detection} %title of the table
+\centering
+\begin{tabular}{rrrrrrr}
+Request \# & Date Received & Date Due & Closed? & Date Closed \\
+\hline\hline
+{% for r in requests %} 
+{{r.file_number}} & {{r.date_created}} & {{r.date_due}} & {{r.closed?}} & {{r.date_closed}}\\ 
+{% endfor %}
+\end{tabular}
+\label{tab:hresult}
+\end{table}
+\end{document}

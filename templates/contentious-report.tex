@@ -1,0 +1,20 @@
+\documentclass[11pt,legalpaper]{report}
+\usepackage[landscape]{geometry}
+\begin{document}
+\begin{table}[h]
+\caption{Performance Using Hard Decision Detection} %title of the table
+\renewcommand{\arraystretch}{2}
+\newcommand{\rr}{raggedright}
+\newcommand{\tn}{tabularnewline}
+\begin{tabular}{rrrrrp{6cm}rr}
+  Request \# & Date Received & Date Due & Closed? & Summary\\
+\hline\hline
+{% for r in requests %}
+  {{r.file_number}} & {{r.date_created}} & {{r.date_due}} & {{r.date_closed}} & \rr
+{{r.summary}} \tn
+
+{% endfor %}
+\end{tabular}
+\label{tab:hresult}
+\end{table}
+\end{document}
